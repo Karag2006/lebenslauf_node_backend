@@ -1,0 +1,258 @@
+{
+    "intro": {
+        "title": "Martin Richter",
+        "items": [
+            {
+                "id": 0,
+                "title": "Adresse",
+                "content": "Am Hof 28. 53639 Königswnter"
+            },
+            {
+                "id": 1,
+                "title": "Telefon",
+                "content": "02223 - 90 37 73"
+            },
+            {
+                "id": 2,
+                "title": "Mobil",
+                "content": "0176 - 56 123 985"
+            },
+            {
+                "id": 3,
+                "title": "E.Mail",
+                "content": "martin.richter2006@gmail.com"
+            },
+            {
+                "id": 4,
+                "title": "Geburtsdatum / Ort",
+                "content": "11.02.1981 Köln"
+            },
+            {
+                "id": 5,
+                "title": "Hobbies",
+                "content": "PC Spiele, 3D Modellierung, Programmierung"
+            }
+        ],
+        "image": {
+            "src": "/img/Martin_Lebenslauf2.jpg",
+            "alt": "Photo of Martin Richter"
+        }
+    },
+    "main": {
+        "skills": {
+            "skillTitle": "Kenntnisse & Fähigkeiten",
+            "skillCategories": [
+                {
+                    "id": 0,
+                    "col": 1,
+                    "title": "Sprachen",
+                    "items": [
+                        { "id": 0, "name": "Deutsch", "level": 10 },
+                        { "id": 1, "name": "Englisch", "level": 8 }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "col": 2,
+                    "title": "Programmierung",
+                    "items": [
+                        { "id": 0, "name": "Java", "level": 7 },
+                        { "id": 1, "name": "C / C++", "level": 7 }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "col": 2,
+                    "title": "Frontend",
+                    "items": [
+                        { "id": 0, "name": "HTML", "level": 9 },
+                        { "id": 1, "name": "CSS (SCSS)", "level": 8 },
+                        {
+                            "id": 2,
+                            "name": "JavaScript (VueJS, jQuery)",
+                            "level": 8
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "col": 2,
+                    "title": "Backend",
+                    "items": [
+                        {
+                            "id": 0,
+                            "name": "Linux Server-Architektur",
+                            "level": 8
+                        },
+                        { "id": 1, "name": "PHP (Laravel)", "level": 8 },
+                        {
+                            "id": 2,
+                            "name": "Ruby on Rails",
+                            "level": 6
+                        },
+                        { "id": 3, "name": "NodeJS", "level": 5 },
+                        { "id": 4, "name": "MySQL", "level": 8 },
+                        { "id": 5, "name": "PostgresSQL", "level": 7 }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "col": 1,
+                    "title": "Betriebssysteme",
+                    "items": [
+                        {
+                            "id": 0,
+                            "name": "Windows (95 - Windows10)",
+                            "level": 8
+                        },
+                        { "id": 1, "name": "Windows Server", "level": 6 },
+                        {
+                            "id": 2,
+                            "name": "Linux (Ubuntu, Manjaro)",
+                            "level": 9
+                        },
+                        { "id": 3, "name": "MacOS (X)", "level": 4 }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "col": 1,
+                    "title": "Sonstiges",
+                    "items": [
+                        { "id": 0, "name": "Office Suite", "level": 8 },
+                        { "id": 1, "name": "Git", "level": 8 },
+                        {
+                            "id": 2,
+                            "name": "Docker (Compose)",
+                            "level": 6
+                        },
+                        { "id": 3, "name": "CMS (Typo3)", "level": 5 },
+                        {
+                            "id": 4,
+                            "name": "Shopsysteme (Shopware)",
+                            "level": 5
+                        },
+                        {
+                            "id": 5,
+                            "name": "Adobe Photoshop (CS6)",
+                            "level": 7
+                        },
+                        { "id": 6, "name": "Adobe Indesign (CS6)", "level": 5 },
+                        { "id": 7, "name": "Blender (2.67 - 2.91)", "level": 7 }
+                    ]
+                }
+            ]
+        },
+        "career": {
+            "jobs": {
+                "title": "Festanstellung",
+                "jobItems": [
+                    {
+                        "id": 0,
+                        "institution": "Trailerparts24 Anhängercenter",
+                        "timeFrame": "Jan. 2012 - Heute",
+                        "occupation": "",
+                        "work": [
+                            {
+                                "id": 0,
+                                "text": "Online-Shop Pflege"
+                            },
+                            {
+                                "id": 1,
+                                "text": "Verkauf"
+                            },
+                            {
+                                "id": 2,
+                                "text": "Kundensupport"
+                            },
+                            {
+                                "id": 3,
+                                "text": "Bildbearbeitung"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "institution": "Universität Bonn",
+                        "timeFrame": "Juni 2009 - Mai 2011",
+                        "occupation": "Studentische Hilfskraft in der klassischen Archäologie",
+                        "work": [
+                            {
+                                "id": 0,
+                                "text": "Administration (Windows Server 2003 und 2008 sowie Windows XP - Windows 7)"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "institution": "Universität Bonn",
+                        "timeFrame": "Juni 2004 - Mai 2008",
+                        "occupation": "Studentische Hilfskraft in der Abteilung für angewandte Informatik",
+                        "work": [
+                            {
+                                "id": 0,
+                                "text": "Administration (Linux PCs und Server)"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "institution": "Bundeswehr",
+                        "timeFrame": "Okt. 2001 - Juni 2002",
+                        "occupation": "Grundwehrdienst im Sanitätsamt der Bundeswehr",
+                        "work": [
+                            {
+                                "id": 0,
+                                "text": "Personalplanung"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "studies": {
+                "title": "Studium",
+                "studiesItems": [
+                    {
+                        "id": 0,
+                        "institution": "Universität Bonn",
+                        "timeFrame": "Okt 2002 - Heute",
+                        "subjects": [
+                            {
+                                "id": 0,
+                                "text": "Physik (2 Semester)"
+                            },
+                            {
+                                "id": 1,
+                                "text": "Informatik (aktuell ruhend)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "school": {
+                "title": "Schullaufbahn",
+                "schoolItems": [
+                    {
+                        "id": 0,
+                        "institution": "Kardinal-Frings-Gymnasium (Bonn/Beuel)",
+                        "timeFrame": "1993 - 2001",
+                        "class": "Klassen 6 - 13 (Abschluss: Abitur)"
+                    },
+                    {
+                        "id": 1,
+                        "institution": "Humboldt Gymnasium (Köln)",
+                        "timeFrame": "1992 - 1993",
+                        "class": "Klasse 5"
+                    },
+                    {
+                        "id": 2,
+                        "institution": "Grundschule Trierer Strasse (Köln)",
+                        "timeFrame": "1988 - 1992",
+                        "class": "Klassen 1 - 4"
+                    }
+                ]
+            }
+        }
+    }
+
+}
