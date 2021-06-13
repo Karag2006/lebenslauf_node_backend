@@ -6,7 +6,7 @@ const Lebenslauf = require('../models/Lebenslauf')
 router.get('/', async (req, res) => {
     try {
         const items = await Lebenslauf.find()
-        res.json(items)
+        res.json(items[0])
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
