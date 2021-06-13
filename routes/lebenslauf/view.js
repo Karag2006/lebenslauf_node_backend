@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Lebenslauf = require('../models/Lebenslauf')
+const Lebenslauf = require('../../models/Lebenslauf')
 
 // GET the lebenslauf from Database for display.
 router.get('/', async (req, res) => {

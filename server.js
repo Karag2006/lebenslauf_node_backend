@@ -1,13 +1,17 @@
 /*  Requires:
 *
-*   MongoDB Database named lebenslauf complete with an admin user for it.
-*   Credentials saved in .env
+*   MongoDB Database named "lebenslauf" complete with an admin user for it.
+*   Credentials saved in .env File
 *
 */
 
 // Requirements : 
 require("dotenv").config();
 
+
+// const fs = require("fs");
+const http = require("http");
+// const https = require("https");
 const express = require("express");
 const cors = require('cors');
 const app = express();
@@ -29,7 +33,12 @@ db.once("open", () => console.log("Connected to DB"));
 app.use(cors())
 app.use(express.json())
 
-const viewRouter = require('./routes/lebenslauf')
+const viewRouter = require('./routes/lebenslauf/view')
 app.use("/lebenslauf", viewRouter)
 
-app.listen(3000, () => console.log("Server Started on Port 3000"));
+const adminRouter = require("./routes/lebenslauf/admin");
+app.use("/lebenslauf/admin", adminRouter);
+
+const httpServer = http.createServer(app);
+
+httpServer.listen(process.env.HTTP_PORT, () => console.log("HTTP Server Started on Port " + process.env.HTTP_PORT));
