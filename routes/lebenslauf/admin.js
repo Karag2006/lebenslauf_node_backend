@@ -42,7 +42,7 @@ router.delete("/deleteDefault", async (req, res) => {
     }
 });
 
-router.get("/", async (req, res) => {
+router.get("/users", async (req, res) => {
     try {
         const users = await User.find();
         res.json(users[0]);
@@ -50,5 +50,17 @@ router.get("/", async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
+router.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const newLebenslauf = req.body;
+    try {
+        console.log(newLebenslauf)
+        await Lebenslauf.findByIdAndUpdate(id, newLebenslauf);
+        res.status(200).json({message: "updated Lebenslauf"})
+    } catch (error) {
+        res.status(500).res.json({ message: "Failed to update Lebenslauf" })
+    }
+})
 
 module.exports = router;
