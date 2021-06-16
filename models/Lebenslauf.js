@@ -83,4 +83,4 @@ const lebenslaufShema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('full', lebenslaufShema)
+module.exports = mongoose.model('cv', lebenslaufShema)

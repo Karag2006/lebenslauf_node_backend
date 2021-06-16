@@ -3,3 +3,19 @@ GET http://localhost:3000/lebenslauf
 
 ###
 
+GET http://localhost:3000/lebenslauf/admin
+
+
+###
+
+POST http://localhost:3000/lebenslauf/admin/createDefault
+
+{}
+
+
+###
+
+DELETE http://localhost:3000/lebenslauf/admin/deleteDefault
+
+
+
