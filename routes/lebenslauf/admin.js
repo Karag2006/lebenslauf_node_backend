@@ -4,6 +4,7 @@ const Lebenslauf = require("../../models/Lebenslauf");
 const User = require("../../models/User");
 
 
+
 router.post("/createDefault", async (req, res) => {
     try {
         let user = await User.exists({ username: process.env.API_USERNAME });
@@ -45,6 +46,9 @@ router.delete("/deleteDefault", async (req, res) => {
 router.get("/users", async (req, res) => {
     try {
         const users = await User.find();
+        users.forEach(element => {
+            delete element.password
+        });
         res.json(users[0]);
     } catch (error) {
         res.status(500).json({ message: error.message });
