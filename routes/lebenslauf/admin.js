@@ -45,9 +45,10 @@ router.delete("/deleteDefault", async (req, res) => {
 
 router.get("/users", async (req, res) => {
     try {
-        const users = await User.find();
+        let users = await User.find();
         users.forEach(element => {
-            delete element.password
+            element.password = undefined
+            console.log(element)
         });
         res.json(users[0]);
     } catch (error) {
