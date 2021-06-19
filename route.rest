@@ -10,7 +10,7 @@ GET http://localhost:3000/lebenslauf/admin/users
 ###
 
 
-POST http://localhost:3000/lebenslauf/admin/login
+POST http://martin-richter.me:3000/lebenslauf/admin/login
 Content-Type: application/json
 
 {
