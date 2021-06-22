@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
                     username: user.username,
                     id: user._id,
                 })
-                res.status(200).json({token})    
+                res.status(200).json({token, userID: user.id, userName: user.username})    
             }
             else
                 res.status(403).json({ message: "wrong username or password" });

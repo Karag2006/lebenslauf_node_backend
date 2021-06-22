@@ -19,7 +19,7 @@ const app = express();
 require("./dbConnect");
 
 var corsOptions = {
-    origin: "http://lebenslauf.martin-richter.me",
+    //origin: "http://lebenslauf.martin-richter.me",
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -27,10 +27,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 const viewRouter = require("./routes/lebenslauf/view");
-app.use("/lebenslauf", viewRouter);
+app.use("/api", viewRouter);
 
 const adminRouter = require("./routes/lebenslauf/admin");
-app.use("/lebenslauf/admin", adminRouter);
+app.use("/api/auth", adminRouter);
 
 const httpServer = http.createServer(app);
 
