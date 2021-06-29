@@ -103,7 +103,7 @@ router.put("/:id", async (req, res) => {
 })
 
 function generateAccessToken(userObject) {
-    return jwt.sign(userObject, process.env.TOKEN_SECRET, { expiresIn: '1800s' });
+    return jwt.sign(userObject, process.env.TOKEN_SECRET, { expiresIn: '3600s' });
 }
 
 module.exports = router;
