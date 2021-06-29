@@ -13,14 +13,17 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.patch('/:id', authenticateToken,  async (req, res) => {
+router.patch('/:id', authenticateToken, async (req, res) => {
     try {
         const items = await Lebenslauf.find();
         if (req.body.ident) {
             let cv = items[req.body.ident]
-            if (req.body.location && req.body.value) {     
-                setValue(cv, req.body.location, req.body.value)
-                cv.save()
+
+            if (req.body.values) {
+                req.body.values.forEach(element => {
+                    setValue(cv, element.location, element.value); 
+                });
+                cv.save();
                 //console.log(cv)
                 res.status(200).json({ req: req.body });
             } else {
