@@ -59,6 +59,28 @@ router.post('/:id', authenticateToken, async (req, res) => {
     }
 })
 
+router.delete('/:id', authenticateToken, async (req, res) => {
+    try {
+        const items = await Lebenslauf.find();
+        if (req.query.location) {
+            let cv = items[0];
+            
+            if (typeof req.query.itemId === 'string') {
+                remItem(cv, req.query)
+                await cv.save();
+                res.status(200).json({ req: req.query });
+            } else {
+                res.status(400).json({ message: error.message }); 
+            }
+        }
+        else {
+            res.status(404).json({ message: error.message });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+})
+
 
 function setValue(obj, locationString, value) {
     let string = locationString;
@@ -86,10 +108,32 @@ function addItem(cv, obj) {
     //console.log(obj);
 }
 
+function remItem(cv, obj) {
+    let string = obj.location;
+    let items = string.split(".");
+    
+    // location is pointing to the element instead of the array the element is in
+    // so we need to remove the last item in the items array to get the targeted array.
+    items.splice(items.length - 1, 1);
+    
+    let len = items.length;
+    for (let i = 0; i < len - 1; i++) {
+        let elem = items[i];
+        if (!cv[elem]) cv[elem] = {};
+        cv = cv[elem];
+    }
+    // remove the item from the array at location
+    cv[items[len - 1]].splice(obj.itemId, 1);
+    
+    // refresh id's of the items of the array to keep id's consistent
+    for (let i = 0; i < cv[items[len - 1]].length; i++) {
+        cv[items[len - 1]][i].id = i;
+    }
+}
+
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(' ')[1]
-
   if (token == null) return res.sendStatus(401)
 
   jwt.verify(token, process.env.TOKEN_SECRET, (err) => {
