@@ -37,7 +37,7 @@ router.patch('/:id', authenticateToken, async (req, res) => {
     }
 })
 
-router.post('/addItem', authenticateToken, async (req, res) => {
+router.post('/:id', authenticateToken, async (req, res) => {
     try {
         const items = await Lebenslauf.find();
         if (req.body.ident) {
