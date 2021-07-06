@@ -27,14 +27,35 @@ router.patch('/:id', authenticateToken, async (req, res) => {
                 //console.log(cv)
                 res.status(200).json({ req: req.body });
             } else {
-               res.status(401).json({ message: error.message }); 
+                res.status(401).json({ message: error.message }); 
             }
         } else {
             res.status(404).json({ message: error.message }); 
         }
-
     } catch (error) {
         res.status(500).json({ message: error.message })
+    }
+})
+
+router.post('/addItem', authenticateToken, async (req, res) => {
+    try {
+        const items = await Lebenslauf.find();
+        if (req.body.ident) {
+            let cv = items[req.body.ident];
+            if (typeof req.body.item === 'object') {
+                addItem(cv, req.body)
+                await cv.save();
+                //console.log(cv)
+                res.status(200).json({ req: req.body });
+            } else {
+                res.status(401).json({ message: error.message }); 
+            }
+        }
+        else {
+            res.status(404).json({ message: error.message });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 })
 
@@ -49,6 +70,19 @@ function setValue(obj, locationString, value) {
         obj = obj[elem];
     }
     obj[items[len - 1]] = value;
+    //console.log(obj);
+}
+
+function addItem(cv, obj) {
+    let string = obj.location;
+    let items = string.split(".");
+    let len = items.length;
+    for (let i = 0; i < len - 1; i++) {
+        let elem = items[i];
+        if (!cv[elem]) cv[elem] = {};
+        cv = cv[elem];
+    }
+    cv[items[len - 1]].push(obj.item);
     //console.log(obj);
 }
 
